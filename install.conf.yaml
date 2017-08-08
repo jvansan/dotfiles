@@ -1,0 +1,14 @@
+- clean: ['~']
+
+- link:
+	~/.dotfiles: ''
+	~/.vimrc: vimrc
+	~/.vim:
+		force: true
+		path: vim/
+- shell:
+	- [git submodule update --init --recursive, Updating submodules]
+	- command vim +PlugUpdate +PlugUpgrade +qall
+		stdin: true
+		stdout: true
+		stderr: true
