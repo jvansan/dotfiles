@@ -6,6 +6,11 @@
      ~/.vim:
          force: true
          path: vim/
+     ~/.zsh:
+         force: true
+         path: zsh/
+     ~/.zshrc: zshrc
+     ~/.zshenv: zshenv
 
 - shell:
    - [git submodule update --init --recursive, Updating submodules]
