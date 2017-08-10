@@ -10,6 +10,7 @@ if ! zgen saved; then
 
 	# oh-my-zsh plugins
 	zgen oh-my-zsh plugins/colorize
+	zgen oh-my-zsh plugins/command-not-found
 
 	# update zgen and plugins automatically
 	zgen load unixorn/autoupdate-zgen
