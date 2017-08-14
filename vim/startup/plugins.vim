@@ -4,6 +4,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
+Plug 'Townk/vim-autoclose'
 
 call plug#end()
 
