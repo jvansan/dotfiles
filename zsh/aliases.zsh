@@ -1,6 +1,6 @@
 alias grep='grep --color=auto'
 alias vi='vim'
 alias la='ls -a'
-alias less='les -N'
+alias less='less -N'
 alias m='less -N'
 alias tmux='tmux -2u'
