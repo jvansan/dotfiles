@@ -10,3 +10,10 @@ git_prompt_info_mine() {
     fi
 }
 PROMPT='%{$fg[green]%}%m %{$fg[cyan]%}%c%{$fg[yellow]%}$(git_prompt_info_mine)%{$reset_color%} $ '
+
+## ============================================================================
+###                                  Anaconda
+### ============================================================================
+if [ -d $HOME/anaconda3/ ]; then
+  export PATH="$HOME/anaconda3/bin:$PATH"
+fi
