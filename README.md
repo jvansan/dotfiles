@@ -1,6 +1,6 @@
 # dotfiles [![Build Status](https://travis-ci.org/jvansan/dotfiles.svg?branch=master)](https://travis-ci.org/jvansan/dotfiles)
 
-Config files for various things
+Config files for various things including zsh, vim, and tmux. 
 
 ### Installation
 ```
