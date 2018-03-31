@@ -4,13 +4,15 @@ Plug 'bling/vim-airline'				" status bar
 Plug 'Valloric/YouCompleteMe'				" auto-completion 
 Plug 'w0rp/ale'						" linter 
 Plug 'mhinz/vim-startify'				" startup page 
-Plug 'Townk/vim-autoclose' 				" close parens 
+" Plug 'Townk/vim-autoclose' 				" close parens 
 Plug 'Yggdroot/indentLine'                              " show indent 
 Plug 'junegunn/vim-easy-align'				" align stuff 
 Plug 'luochen1990/rainbow'				" rainbow parens 
 Plug 'ctrlpvim/ctrlp.vim'				" fuzzy file open
 Plug 'roxma/vim-tmux-clipboard'				" Vim + Tmux clipboard integration
 Plug 'tpope/vim-commentary'				" comment functions
+Plug 'vim-airline/vim-airline-themes'                   " Status line themes
+
 
 call plug#end()
 
@@ -35,3 +37,14 @@ let g:indentLine_leadingSpaceEnabled=0
 let g:indentLine_noConcealCursor=''
 " ignore startify
 let g:indentLine_fileTypeExclude=['startify']
+
+" Ale
+" turn off convention pylint messages and misc
+let g:ale_python_pylint_options='--disable=C --disable=W0311 --disable=W0703'
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+" airline
+" let g:airline_powerline_fonts=1
+let g:airline_theme='dark'
