@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/jvansan/sfuvault/NPAtlas'
-let g:netrw_dirhist_2='/home/jvansan/sfuvault/NPAtlas/NPAtlas'
-let g:netrw_dirhist_3='/home/jvansan/git/npatlas_python/npatlas/dbtools'
-let g:netrw_dirhist_4='/home/jvansan/git/atlas-data-pipeline/standardize_json/source_json'
-let g:netrw_dirhist_5='/home/jvansan/git/atlas-data-pipeline/standardize_json'
-let g:netrw_dirhist_6='/home/jvansan/git/npatlas_python/npatlas/dbtools'
-let g:netrw_dirhist_7='/home/jvansan/data/Reaxys_genera/Bacteria'
-let g:netrw_dirhist_8='/home/jvansan/data/Reaxys_genera/Bacteria/20180322'
-let g:netrw_dirhist_9='/home/jvansan/.ssh'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/jvansan/git/npatlas_curator/curator'
