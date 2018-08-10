@@ -2,3 +2,10 @@
 *.o
 *.pyc
 tags
+nbci_api.key
+
+
+/* only keep plugin manager */
+tmux/plugins
+!tmux/plugins/tpm
+
