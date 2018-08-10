@@ -2,7 +2,7 @@
 *.o
 *.pyc
 tags
-nbci_api.key
+ncbi_api.key
 
 
 /* only keep plugin manager */
