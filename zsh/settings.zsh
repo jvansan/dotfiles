@@ -1,4 +1,18 @@
 ## ============================================================================
+###                                 Settings
+### ============================================================================j
+# NCBI API-key
+[ -f ~/.zsh/ncbi_api.key ] &&  source ncbi_api.key
+
+# Don't save duplicated entries into history
+setopt hist_ignore_all_dups
+
+# Hack to fix Homebrew
+if [ "$(uname)" = "Darwin" ]; then
+	export PATH=/usr/local/bin:$PATH
+fi
+
+## ============================================================================
 ###                                  Prompt
 ### ============================================================================
 git_prompt_info_mine() {
@@ -19,3 +33,9 @@ if [ -d $HOME/anaconda3/ ]; then
 elif [ -d $HOME/bin/anaconda/ ]; then
   export PATH="$HOME/bin/anaconda/bin:$PATH"
 fi
+
+
+#  ============================================================================
+#                                   FZF
+#  ============================================================================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

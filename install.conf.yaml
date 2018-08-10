@@ -17,6 +17,7 @@
      ~/.zshenv: zshenv
      ~/.tmux.conf: tmux.conf
      ~/.tmux: tmux/
+     ~/.fzf: fzf/
 - shell:
    - [git submodule update --init --recursive, Updating submodules]
    - command: vim +PlugUpdate +PlugUpgrade +qall
