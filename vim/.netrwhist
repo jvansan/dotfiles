@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/jvansan/git/npatlas_curator/curator'
-let g:netrw_dirhist_2='/home/jvansan/git/dotfiles/vim'
-let g:netrw_dirhist_3='/home/jvansan/git/dotfiles/vim/plugged'
-let g:netrw_dirhist_4='/home/jvansan/git/dotfiles/vim'
-let g:netrw_dirhist_5='/home/jvansan/git/dotfiles/vim/startup'
-let g:netrw_dirhist_6='/home/jvansan/git/atlas-data-pipeline/atlas_sql_scripts'
-let g:netrw_dirhist_7='/home/jvansan/bleh'
-let g:netrw_dirhist_8='/home/jvansan/git/NPAtlas_DataTool'
-let g:netrw_dirhist_9='/home/jvansan/git/dotfiles/zsh'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/jvansan/git/flask_learning/simple_CRUD_app/app'
+let g:netrw_dirhist_2='/Users/jvansan/git/flask_learning/simple_CRUD_app/app/auth'
+let g:netrw_dirhist_3='/Users/jvansan/git/flask_learning/simple_CRUD_app/app'
