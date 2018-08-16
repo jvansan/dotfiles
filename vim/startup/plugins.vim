@@ -12,7 +12,8 @@ Plug 'ctrlpvim/ctrlp.vim'				" fuzzy file open
 Plug 'roxma/vim-tmux-clipboard'				" Vim + Tmux clipboard integration
 Plug 'tpope/vim-commentary'				" comment functions
 Plug 'vim-airline/vim-airline-themes'                   " Status line themes
-Plug 'cjrh/vim-conda'					" Conda environment
+Plug 'mattn/emmet-vim'					" HTML/CSS helpers
+" Plug 'cjrh/vim-conda'					" Conda environment
 
 
 call plug#end()

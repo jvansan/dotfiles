@@ -28,12 +28,30 @@ PROMPT='%{$fg[green]%}%m %{$fg[cyan]%}%c%{$fg[yellow]%}$(git_prompt_info_mine)%{
 ## ============================================================================
 ###                                  Anaconda
 ### ============================================================================
-if [ -d $HOME/anaconda3/ ]; then
-  export PATH="$HOME/anaconda3/bin:$PATH"
-elif [ -d $HOME/bin/anaconda/ ]; then
-  export PATH="$HOME/bin/anaconda/bin:$PATH"
-fi
+# if [ -d $HOME/anaconda3/ ]; then
+#   export PATH="$HOME/anaconda3/bin:$PATH"
+# elif [ -d $HOME/bin/anaconda/ ]; then
+#   export PATH="$HOME/bin/anaconda/bin:$PATH"
+# fi
+## ============================================================================
+###				brew python
+### ===========================================================================
+# Use the right python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+# Activate virtualenv wrapper
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
+# pip only available if virtual env activated
+export PIP_REQUIRE_VIRTUALENV=true
+
+# command to override pip restriction
+gpip() {
+	PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+gpip3() {
+	PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
 
 #  ============================================================================
 #                                   FZF
