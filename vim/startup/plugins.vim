@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary'				" comment functions
 Plug 'vim-airline/vim-airline-themes'                   " Status line themes
 Plug 'mattn/emmet-vim'					" HTML/CSS helpers
 " Plug 'cjrh/vim-conda'					" Conda environment
+Plug 'lepture/vim-jinja'				" HTML-Jinja
 
 
 call plug#end()
