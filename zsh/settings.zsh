@@ -28,16 +28,23 @@ PROMPT='%{$fg[green]%}%m %{$fg[cyan]%}%c%{$fg[yellow]%}$(git_prompt_info_mine)%{
 ## ============================================================================
 ###                                  Anaconda
 ### ============================================================================
-# if [ -d $HOME/anaconda3/ ]; then
-#   export PATH="$HOME/anaconda3/bin:$PATH"
-# elif [ -d $HOME/bin/anaconda/ ]; then
-#   export PATH="$HOME/bin/anaconda/bin:$PATH"
-# fi
+conda_activate () {
+	if [ -d $HOME/anaconda3/ ]; then
+	  export PATH="$HOME/anaconda3/bin:$PATH"
+	else
+	  echo "Anaconda Python does not appear to be installed"
+	fi
+}
 ## ============================================================================
-###				brew python
+###				     Python
 ### ===========================================================================
 # Use the right python
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+if [ "$(uname)" = "Darwin" ]; then
+	export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+else
+	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+fi
+
 # Activate virtualenv wrapper
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
 
