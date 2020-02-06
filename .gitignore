@@ -10,3 +10,6 @@ tmux/plugins
 !tmux/plugins/tpm
 
 .netrwhist
+
+vim/init.vim
+vim/autoload/

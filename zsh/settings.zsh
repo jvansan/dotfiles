@@ -23,42 +23,7 @@ git_prompt_info_mine() {
         echo ""
     fi
 }
-PROMPT='%{$fg[green]%}%m %{$fg[cyan]%}%c%{$fg[yellow]%}$(git_prompt_info_mine)%{$reset_color%} $ '
-
-## ============================================================================
-###                                  Anaconda
-### ============================================================================
-conda_activate () {
-	if [ -d $HOME/anaconda3/ ]; then
-	  export PATH="$HOME/anaconda3/bin:$PATH"
-	else
-	  echo "Anaconda Python does not appear to be installed"
-	fi
-}
-## ============================================================================
-###				     Python
-### ===========================================================================
-# Use the right python
-if [ "$(uname)" = "Darwin" ]; then
-	export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-else
-	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-fi
-
-# Activate virtualenv wrapper
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
-
-# pip only available if virtual env activated
-export PIP_REQUIRE_VIRTUALENV=true
-
-# command to override pip restriction
-gpip() {
-	PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
-
-gpip3() {
-	PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
-}
+# PROMPT='%{$fg[green]%}%m %{$fg[cyan]%}%c%{$fg[yellow]%}$(git_prompt_info_mine)%{$reset_color%} $ '
 
 #  ============================================================================
 #                                   FZF
