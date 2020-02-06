@@ -1,20 +1,37 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'bling/vim-airline'				" status bar 
-Plug 'Valloric/YouCompleteMe'				" auto-completion 
-Plug 'w0rp/ale'						" linter 
-Plug 'mhinz/vim-startify'				" startup page 
-Plug 'Townk/vim-autoclose' 				" close parens 
+" fzf support
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'                                  " Color theme
+
+Plug 'bling/vim-airline'                                " status bar 
+" Plug 'Valloric/YouCompleteMe'                         " auto-completion 
+" Plug 'cjrh/vim-conda'                                 " Conda support in vim
+if has("nvim")
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'davidhalter/jedi-vim'                             " auto-complete python
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'wokalski/autocomplete-flow'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neco-vim'                                  " 
+Plug 'sbdchd/neoformat'                                 " Auto formatting
+Plug 'w0rp/ale'                                         " linter 
+Plug 'mhinz/vim-startify'                               " startup page 
+Plug 'Townk/vim-autoclose'                              " close parens 
 Plug 'Yggdroot/indentLine'                              " show indent 
-Plug 'junegunn/vim-easy-align'				" align stuff 
-Plug 'luochen1990/rainbow'				" rainbow parens 
-Plug 'ctrlpvim/ctrlp.vim'				" fuzzy file open
-Plug 'roxma/vim-tmux-clipboard'				" Vim + Tmux clipboard integration
-Plug 'tpope/vim-commentary'				" comment functions
+Plug 'junegunn/vim-easy-align'                          " align stuff 
+Plug 'luochen1990/rainbow'                              " rainbow parens 
+Plug 'ctrlpvim/ctrlp.vim'                               " fuzzy file open
+Plug 'tpope/vim-commentary'                             " comment functions
 Plug 'vim-airline/vim-airline-themes'                   " Status line themes
-Plug 'mattn/emmet-vim'					" HTML/CSS helpers
-" Plug 'cjrh/vim-conda'					" Conda environment
-Plug 'lepture/vim-jinja'				" HTML-Jinja
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}    " tree nav
 
 
 call plug#end()
@@ -22,6 +39,8 @@ call plug#end()
 "====================
 "| Plugin Settings  |
 "====================
+" colortheme
+colorscheme gruvbox
 " rainbow
 let g:rainbow_active=1
 
@@ -46,8 +65,22 @@ let g:indentLine_fileTypeExclude=['startify']
 let g:ale_python_pylint_options='--disable=C --disable=W0311 --disable=W0703'
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion=1
+" let g:ycm_autoclose_preview_window_after_insertion=1
 
 " airline
-" let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 let g:airline_theme='dark'
+
+" Jedi code nav
+let g:jedi#completions_enabled = 0
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
+
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+

@@ -9,4 +9,4 @@ noremap <leader>/ :Commentary<cr>
 inoremap jj <Esc>
 
 " Ycm 
-nnoremap <leader> yy   :YcmCompleter GoTo<CR>
+" nnoremap <leader> yy   :YcmCompleter GoTo<CR>

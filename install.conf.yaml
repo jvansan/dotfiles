@@ -7,16 +7,16 @@
          force: true
          create: true
          path: vim/
+     ~/.config/nvim:
+         force: true
+         create: true
+         path: vim/
      ~/.config/nvim/init.vim:
          create: true
-         path: vimrc
-     ~/.zsh:
-         force: true
-         path: zsh/
-     ~/.zshrc: zshrc
+         path: vimrc 
      ~/.zshenv: zshenv
-     ~/.tmux.conf: tmux.conf
      ~/.tmux: tmux/
+     ~/.tmux.conf: tmux.conf
      ~/.fzf: fzf/
 - shell:
    - [git submodule update --init --recursive, Updating submodules]
