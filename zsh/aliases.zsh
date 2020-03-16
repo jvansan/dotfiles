@@ -1,5 +1,0 @@
-alias grep='grep --color=auto'
-alias la='ls -a'
-alias less='less -N'
-alias m='less -N'
-alias tmux='tmux -2u'

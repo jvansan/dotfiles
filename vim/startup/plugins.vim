@@ -15,6 +15,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup = 1
+
 Plug 'davidhalter/jedi-vim'                             " auto-complete python
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'wokalski/autocomplete-flow'
@@ -75,7 +77,6 @@ let g:airline_theme='dark'
 let g:jedi#completions_enabled = 0
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
 
 " Enable alignment

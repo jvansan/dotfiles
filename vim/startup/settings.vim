@@ -1,3 +1,6 @@
+"
+let g:python3_host_prog = '/usr/local/anaconda3/bin/python'
+
 "encoding
 set encoding=utf-8
 

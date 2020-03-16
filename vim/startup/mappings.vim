@@ -10,3 +10,6 @@ inoremap jj <Esc>
 
 " Ycm 
 " nnoremap <leader> yy   :YcmCompleter GoTo<CR>
+if has("nvim")
+  tnoremap <Esc> <C-\><C-n>
+endif

@@ -1,12 +1,12 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "zgen"]
-	path = zgen
-	url = https://github.com/tarjoilija/zgen.git
 [submodule "tmux/tpm"]
 	path = tmux/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "rainbarf"]
+	path = rainbarf
+	url = https://github.com/creaktive/rainbarf.git
