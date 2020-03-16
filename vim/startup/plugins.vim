@@ -34,6 +34,8 @@ Plug 'ctrlpvim/ctrlp.vim'                               " fuzzy file open
 Plug 'tpope/vim-commentary'                             " comment functions
 Plug 'vim-airline/vim-airline-themes'                   " Status line themes
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}    " tree nav
+Plug 'JamshedVesuna/vim-markdown-preview'               " markdown preview
+Plug 'fisadev/vim-isort'
 
 
 call plug#end()
@@ -84,4 +86,8 @@ let g:neoformat_basic_format_align = 1
 
 " Enable tab to spaces conversion
 let g:neoformat_basic_format_retab = 1
+
+" Markdown options
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
 
