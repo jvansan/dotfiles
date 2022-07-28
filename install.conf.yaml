@@ -1,32 +1,41 @@
-- clean: ['~']
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
 
 - link:
-  ~/.dotfiles: ''
-  ~/.vimrc: vimrc
-  ~/.vim:
-    force: true
-    create: true
-    path: vim/
-  ~/.config/nvim:
-    force: true
-    create: true
-    path: vim/
-  ~/.config/nvim/init.vim:
-    create: true
-    path: vimrc
-  ~/.zshrc: zshrc
-  ~/.zshenv: zshenv
-  ~/.tmux: tmux/
-  ~/.tmux.conf: tmux.conf
-  ~/.fzf: fzf/
+    ~/.dotfiles: ""
+    ~/.vimrc: vimrc
+    ~/.vim:
+      force: true
+      create: true
+      path: vim/
+    ~/.config/nvim:
+      force: true
+      create: true
+      path: vim/
+    ~/.config/nvim/init.vim:
+      create: true
+      path: vimrc
+    ~/.config/i3/config:
+      force: true
+      create: true
+      path: i3/i3.config
+    ~/.config/i3status/config:
+      force: true
+      create: true
+      path: i3/i3status.config
+    ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
+    ~/.tmux: tmux/
+    ~/.tmux.conf: tmux.conf
+    ~/.fzf: fzf/
 
 - shell:
-  - [git submodule update --init --recursive, Updating submodules]
-  - command: vim +PlugUpdate +PlugUpgrade +qall
-    stdin: true
-    stdout: true
-    stderr: true
-  - command: ./scripts/dependency_install.sh
-    stdin: true
-    stdout: true
-    stderr: true
+    - [git submodule update --init --recursive, Updating submodules]
+    - command: ./scripts/dependency_install.sh
+      stdin: true
+      stdout: true
+      stderr: true

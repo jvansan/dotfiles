@@ -22,20 +22,20 @@ fzf_install() {
   echo "Finished installing fzf"
 }
 
-rainbarf_install() {
-  echo "Installing rainbarf..."
-  if ! [ -x ~/lib/perl5/bin/rainbarf ]; then
-    cpan Module::Build # choose sudo when installing
-    cd "$DOTFILES_DIR"/rainbarf
-    perl Build.PL --install_base ~/lib/perl5
-    ./Build test
-    ./Build install
-    cd -
-  else
-    echo "rainbarf already installed"
-  fi
-  echo "Finished installing rainbarf locally"
-}
+# rainbarf_install() {
+#   echo "Installing rainbarf..."
+#   if ! [ -x ~/lib/perl5/bin/rainbarf ]; then
+#     cpan Module::Build # choose sudo when installing
+#     cd "$DOTFILES_DIR"/rainbarf
+#     perl Build.PL --install_base ~/lib/perl5
+#     ./Build test
+#     ./Build install
+#     cd -
+#   else
+#     echo "rainbarf already installed"
+#   fi
+#   echo "Finished installing rainbarf locally"
+# }
 
 install_ohmyzsh() {
   echo "Installing ohmyzsh..."
@@ -48,7 +48,6 @@ install_ohmyzsh() {
 
 install() {
   fzf_install
-  rainbarf_install
   install_ohmyzsh
 }
 

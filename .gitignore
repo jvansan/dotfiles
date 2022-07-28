@@ -3,7 +3,8 @@
 *.pyc
 tags
 ncbi_api.key
-
+zshenv
+env/work.env
 
 /* only keep plugin manager */
 tmux/plugins

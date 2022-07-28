@@ -11,12 +11,8 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-if [[ ! -d ~/.oh-my-zsh ]]
-then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-  echo "Oh My Zsh already installed!"
-fi
+[[ -f zshenv ]] && rm zshenv
+touch zshenv
+for f in env/*; do echo "# ${f}" >> zshenv; cat $f >> zshenv; echo "" >> zshenv; done
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
-#cat "${BASEDIRE}"/zshrc >> ~/.zshrc
