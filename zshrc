@@ -120,5 +120,7 @@ else
     ssh-add $HOME/.ssh/id_rsa &> /dev/null
 fi
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Load specific env (concat from *.env in dotbot dir)
 source $HOME/.zshenv

@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 " fzf support
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'                                  " Color theme
+" Plug 'morhetz/gruvbox'                                  " Color theme
 
 Plug 'bling/vim-airline'                                " status bar 
 " Plug 'Valloric/YouCompleteMe'                         " auto-completion 
@@ -44,7 +44,7 @@ call plug#end()
 "| Plugin Settings  |
 "====================
 " colortheme
-colorscheme gruvbox
+" colorscheme gruvbox
 " rainbow
 let g:rainbow_active=1
 
