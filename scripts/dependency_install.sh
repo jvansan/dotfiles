@@ -46,9 +46,31 @@ install_ohmyzsh() {
   fi
 }
 
+
+NEOVIM_DIR=$HOME/git/neovim
+echo $NEOVIM_DIR
+neovim_install() {
+  echo "Installing neovim..."
+  if ! [ -d $NEOVIM_DIR ]; then
+    echo "Installing neovim..."
+    git clone https://github.com/neovim/neovim $NEOVIM_DIR
+    cd ~/neovim
+    make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$NEOVIM_DIR"
+    make install
+    cd -
+
+    # install python dependencies
+    python3 -m pip install --upgrade pynvim
+  else
+    echo "neovim already installed"
+  fi
+  echo "Finished installing neovim locally"
+}
+
 install() {
   fzf_install
   install_ohmyzsh
+	neovim_install
 }
 
 create_ssh
