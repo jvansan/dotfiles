@@ -27,6 +27,7 @@
       force: true
       create: true
       path: i3/i3status.config
+    ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.tmux: tmux/
