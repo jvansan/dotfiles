@@ -27,6 +27,10 @@
       force: true
       create: true
       path: i3/i3status.config
+    ~/config/flameshot/flameshot.ini:
+      force: true
+      create: true
+      path: flameshot.ini
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
