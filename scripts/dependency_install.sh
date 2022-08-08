@@ -40,7 +40,8 @@ fzf_install() {
 install_fedora() {
   sudo dnf install -y vim neovim python3-neovim flameshot \
     make gcc zlib-devel bzip2 bzip2-devel readline-devel \
-    sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel
+    sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel \
+    zip unzip 
 }
 
 install_python() {
@@ -62,14 +63,29 @@ install_ohmyzsh() {
   fi
 }
 
+install_awscli() {
+  echo "Installing AWS CLI"
+  if ! [ -x "$(command -v aws)" ]; then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    rm -r ./aws
+    rm awscliv2.zip
+  else
+    echo "AWS CLI already installed"
+  fi
+}
+
 
 install() {
   install_fedora
   fzf_install
   install_ohmyzsh
   install_python
+  install_awscli
 }
 
 create_ssh
 change_to_zsh
 install 
+
