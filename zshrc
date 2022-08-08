@@ -75,7 +75,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git docker docker-compose pyenv)
-plugins=(git docker docker-compose)
+plugins=(git docker docker-compose poetry pyenv)
 
 source $ZSH/oh-my-zsh.sh
 

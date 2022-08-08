@@ -48,7 +48,7 @@ install_python() {
   if [ ! -d $HOME/.pyenv ]; then
     curl https://pyenv.run | bash
   fi
-  if [ ! -d $HOME/.poetry ]; then
+  if [ ! -f $HOME/.local/bin/poetry ]; then
     curl -sSL https://install.python-poetry.org | python3 -
   fi
 }
