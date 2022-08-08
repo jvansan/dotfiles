@@ -76,6 +76,16 @@ install_awscli() {
   fi
 }
 
+install_docker() {
+  echo "Installing docker"
+  if ! [ -x "$(command -v docker)" ]; then
+    curl -fsSL https://get.docker.com/ | bash
+    sudo systemctl enable --now docker
+  else
+    echo "docker already installed"
+  fi
+}
+
 
 install() {
   install_fedora
@@ -83,6 +93,7 @@ install() {
   install_ohmyzsh
   install_python
   install_awscli
+  install_docker
 }
 
 create_ssh
