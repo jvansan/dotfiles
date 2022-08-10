@@ -101,12 +101,16 @@ install_vscode() {
 
 install_packer() {
   echo "Installing ohmyzsh..."
-  if [ ! -d $HOME/.local/share/nvim.site/pack/packer ]; then
+  if [ ! -d $HOME/.local/share/nvim/site/pack/packer ]; then
     git clone --depth 1 https://github.com/wbthomason/packer.nvim \
       ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   else
       echo "packer already installed"
   fi
+}
+
+sync_nvim() {
+  nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 
@@ -123,5 +127,6 @@ install() {
 
 create_ssh
 change_to_zsh
-install 
+install
+sync_nvim
 
