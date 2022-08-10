@@ -1,6 +1,8 @@
 "encoding
 set encoding=utf-8
 
+colorscheme gruvbox
+
 let mapleader = "\<Space>"
 
 " Line numbering

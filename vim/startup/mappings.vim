@@ -4,9 +4,11 @@ autocmd filetype python nnoremap <buffer> <F12> :w<CR> :exec '!python' shellesca
 " Block comment 
 noremap <leader>/ :Commentary<cr>
 
-" This is totally awesome - remap jj to escape in insert mode. You'll never
-" type jj anyway, so it's great!
-inoremap jj <Esc>
+"" ============================================================================
+""                           Insert Mode Mappings
+"" ============================================================================
+" Leaving insert mode with some ups and downs
+inoremap kj <Esc>
 
 " Ycm 
 " nnoremap <leader> yy   :YcmCompleter GoTo<CR>

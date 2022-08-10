@@ -1,5 +1,5 @@
 " Load settings and plugins
-source ~/.vim/startup/plugins.vim
+lua require('plugins')
+
 source ~/.vim/startup/settings.vim
 source ~/.vim/startup/mappings.vim
-
