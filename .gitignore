@@ -5,6 +5,7 @@ tags
 ncbi_api.key
 zshenv
 env/work.env
+env/_work.env
 
 /* only keep plugin manager */
 tmux/plugins
@@ -14,3 +15,5 @@ tmux/plugins
 
 vim/init.vim
 vim/autoload/
+
+nvim/plugin

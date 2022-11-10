@@ -1,7 +1,4 @@
 # Launch tmux by default
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -104,7 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+alias docker-compose="docker compose"
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
@@ -124,3 +122,11 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Load specific env (concat from *.env in dotbot dir)
 source $HOME/.zshenv
+# rustup
+source "$HOME/.cargo/env"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fpath+=${ZDOTDIR:-~}/.zsh_functions
