@@ -11,14 +11,10 @@
       force: true
       create: true
       path: nvim/
-    ~/.config/i3/config:
+    ~/.config/alacritty:
       force: true
       create: true
-      path: i3/i3.config
-    ~/.config/i3status/config:
-      force: true
-      create: true
-      path: i3/i3status.config
+      path: alacritty/
     ~/config/flameshot/flameshot.ini:
       force: true
       create: true

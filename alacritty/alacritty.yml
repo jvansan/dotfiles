@@ -1,0 +1,7 @@
+window:
+  opacity: 0.95
+  dimensions:
+    columns: 133
+    lines: 40
+bell:
+  duration: 0
