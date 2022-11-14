@@ -1,5 +1,6 @@
 local M = {}
 
+
 function M.setup()
   -- Indicate first time installation
   local packer_bootstrap = false
@@ -60,6 +61,20 @@ function M.setup()
 
 		-- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
+
+    -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      opt = true,
+      event = "BufRead",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter").setup()
+      end,
+      requires = {
+        { "nvim-treesitter/nvim-treesitter-textobjects" },
+      },
+    }
 
 		-- WhichKey
 		use {
@@ -159,9 +174,7 @@ function M.setup()
 				"ray-x/cmp-treesitter",
 				"hrsh7th/cmp-cmdline",
 				"saadparwaiz1/cmp_luasnip",
-				"hrsh7th/cmp-calc",
-				"f3fora/cmp-spell",
-				"hrsh7th/cmp-emoji",
+				"hrsh7th/cmp-nvim-lsp",
 				{
 					"L3MON4D3/LuaSnip",
 					wants = "friendly-snippets",
@@ -172,6 +185,39 @@ function M.setup()
 				"rafamadriz/friendly-snippets",
 				disable = false,
 			},
+		}
+
+		-- Auto pairs
+		use {
+			"windwp/nvim-autopairs",
+			wants = "nvim-treesitter",
+			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			config = function()
+				require("config.autopairs").setup()
+			end,
+		}
+
+		-- End wise
+			use {
+				"RRethy/nvim-treesitter-endwise",
+				wants = "nvim-treesitter",
+				event = "InsertEnter",
+			}
+
+
+		--	LSP
+		use {
+			"neovim/nvim-lspconfig",
+			opt = true,
+			event = "BufReadPre",
+			wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" },
+			config = function()
+				require("config.lsp").setup()
+			end,
+			requires = {
+				"williamboman/nvim-lsp-installer",
+				"ray-x/lsp_signature.nvim",
+			}
 		}
 
     if packer_bootstrap then
