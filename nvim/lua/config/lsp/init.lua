@@ -1,12 +1,30 @@
 local M = {}
 
 local servers = {
-  gopls = {},
+  -- gopls = {},
   html = {},
   jsonls = {},
   pyright = {},
   rust_analyzer = {},
-  sumneko_lua = {},
+  sumneko_lua = {
+		settings = {
+			Lua = {
+				runtime = {
+					version = "LuaJIT",
+					path = vim.split(package.path, ";"),
+				},
+				diagnostics = {
+					globals = { "vim"},
+				},
+				workspace = {
+					library = {
+            [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+            [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+					},
+				},
+			},
+		},
+	},
   tsserver = {},
   vimls = {},
 }

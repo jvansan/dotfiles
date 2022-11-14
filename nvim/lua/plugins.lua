@@ -66,7 +66,6 @@ function M.setup()
     use {
       "nvim-treesitter/nvim-treesitter",
       opt = true,
-      event = "BufRead",
       run = ":TSUpdate",
       config = function()
         require("config.treesitter").setup()
@@ -84,6 +83,15 @@ function M.setup()
 				 require("config.whichkey").setup()
 			 end,
 		}
+
+    -- IndentLine
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufReadPre",
+      config = function()
+        require("config.indentblankline").setup()
+      end,
+    }
 
     -- Better icons
     use {
@@ -145,7 +153,7 @@ function M.setup()
 		use {
 			"ms-jpq/coq_nvim",
 			branch = "coq",
-			event = "InsertEnter",
+			event = "VimEnter",
 			opt = true,
 			run = ":COQdeps",
 			config = function()
@@ -155,7 +163,7 @@ function M.setup()
 				{ "ms-jpq/coq.artifacts", branch = "artifacts" },
 				{ "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
 			},
-			disable = false,
+			disable = true,
 		}
 
 
@@ -210,7 +218,8 @@ function M.setup()
 			"neovim/nvim-lspconfig",
 			opt = true,
 			event = "BufReadPre",
-			wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" },
+			wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" }, -- for nvim-cmp
+      -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
 			config = function()
 				require("config.lsp").setup()
 			end,
