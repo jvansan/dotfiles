@@ -15,7 +15,7 @@
       force: true
       create: true
       path: alacritty/
-    ~/config/flameshot/flameshot.ini:
+    ~/.config/flameshot/flameshot.ini:
       force: true
       create: true
       path: flameshot.ini
