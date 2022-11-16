@@ -185,12 +185,13 @@ function M.setup()
 				"hrsh7th/cmp-nvim-lsp",
 				{
 					"L3MON4D3/LuaSnip",
-					wants = "friendly-snippets",
+					wants = {"friendly-snippets", "vim-snippets"},
 					config = function()
 						require("config.luasnip").setup()
 					end,
 				},
 				"rafamadriz/friendly-snippets",
+				"honza/vim-snippets",
 				disable = false,
 			},
 		}
