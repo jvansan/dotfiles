@@ -49,16 +49,6 @@ function M.setup()
       end,
     }
 
-    -- Git
-    use {
-      "TimUntersberger/neogit",
-			cmd = "Neogit",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("config.neogit").setup()
-      end,
-    }
-
 		-- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
@@ -132,43 +122,6 @@ function M.setup()
       end,
     }
 
-    -- Markdown
-    use {
-      "iamcco/markdown-preview.nvim",
-      run = function()
-        vim.fn["mkdp#util#install"]()
-      end,
-      ft = "markdown",
-      cmd = { "MarkdownPreview" },
-    }
-
-		-- FZF
-		use {
-		 "ibhagwan/fzf-lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
-		}
-
-		-- WordMotion
-		use { "chaoren/vim-wordmotion" }
-
-		-- Completion
-		use {
-			"ms-jpq/coq_nvim",
-			branch = "coq",
-			event = "VimEnter",
-			opt = true,
-			run = ":COQdeps",
-			config = function()
-				require("config.coq").setup()
-			end,
-			requires = {
-				{ "ms-jpq/coq.artifacts", branch = "artifacts" },
-				{ "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
-			},
-			disable = true,
-		}
-
-
 		use {
 			"hrsh7th/nvim-cmp",
 			event = "InsertEnter",
@@ -222,7 +175,6 @@ function M.setup()
 			opt = true,
 			event = "BufReadPre",
 			wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" }, -- for nvim-cmp
-      -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
 			config = function()
 				require("config.lsp").setup()
 			end,
@@ -265,20 +217,6 @@ function M.setup()
 					end,
 				},
 			},
-		}
-
-		-- Testing
-		use {
-			"nvim-neotest/neotest",
-			config = function()
-				require("config.neotest").setup()
-			end,
-			requires = {
-				"nvim-lua/plenary.nvim",
-				"nvim-treesitter/nvim-treesitter",
-				"antoinemadec/FixCursorHold.nvim",
-				"nvim-neotest/neotest-python",
-			}
 		}
 
     if packer_bootstrap then
