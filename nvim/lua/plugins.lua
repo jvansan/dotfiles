@@ -66,12 +66,14 @@ function M.setup()
     use {
       "nvim-treesitter/nvim-treesitter",
       opt = true,
+			event = "BufReadPre",
       run = ":TSUpdate",
       config = function()
         require("config.treesitter").setup()
       end,
       requires = {
-        { "nvim-treesitter/nvim-treesitter-textobjects" },
+        { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
+        { "p00f/nvim-ts-rainbow", event = "BufReadPre"},
       },
     }
 
