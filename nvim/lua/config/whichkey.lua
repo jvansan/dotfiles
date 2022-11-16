@@ -25,6 +25,8 @@ function M.setup()
 
     b = {
       name = "Buffer",
+			n = { "<Cmd>bn<Cr>", "Go to next buffer"},
+			p = { "<Cmd>bp<Cr>", "Go to previous buffer"},
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
     },

@@ -37,3 +37,9 @@ keymap("n", "<Left>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
+
+-- Moving in insert mode
+keymap("i", "<C-h>", "<left>", default_opts)
+keymap("i", "<C-j>", "<down>", default_opts)
+keymap("i", "<C-k>", "<right>", default_opts)
+keymap("i", "<C-l>", "<up>", default_opts)
