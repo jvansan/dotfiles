@@ -38,6 +38,13 @@ keymap("n", "<Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<Down>", ":resize +1<CR>", default_opts)
 
+-- Switching panes
+keymap("n", "<C-j>", "<C-w><C-j>", default_opts)
+keymap("n", "<C-k>", "<C-w><C-k>", default_opts)
+keymap("n", "<C-l>", "<C-w><C-l>", default_opts)
+keymap("n", "<C-h>", "<C-w><C-h>", default_opts)
+
+
 -- Moving in insert mode
 keymap("i", "<C-h>", "<left>", default_opts)
 keymap("i", "<C-j>", "<down>", default_opts)
