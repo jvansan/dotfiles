@@ -22,23 +22,8 @@ fzf_install() {
   echo "Finished installing fzf"
 }
 
-# rainbarf_install() {
-#   echo "Installing rainbarf..."
-#   if ! [ -x ~/lib/perl5/bin/rainbarf ]; then
-#     cpan Module::Build # choose sudo when installing
-#     cd "$DOTFILES_DIR"/rainbarf
-#     perl Build.PL --install_base ~/lib/perl5
-#     ./Build test
-#     ./Build install
-#     cd -
-#   else
-#     echo "rainbarf already installed"
-#   fi
-#   echo "Finished installing rainbarf locally"
-# }
-
 install_fedora() {
-  sudo dnf install -y vim neovim python3-neovim flameshot \
+  sudo dnf install -y vim python3-neovim flameshot \
     make gcc zlib-devel bzip2 bzip2-devel readline-devel \
     sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel \
     zip unzip graphviz graphviz-devel
@@ -115,7 +100,9 @@ sync_nvim() {
 
 
 install() {
-  install_fedora
+  if [ -x "$(command -v dnf)" ]; then	  
+    install_fedora
+  fi
   fzf_install
   install_ohmyzsh
   install_python
