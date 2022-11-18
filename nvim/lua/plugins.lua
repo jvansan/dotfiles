@@ -52,11 +52,13 @@ function M.setup()
 		-- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
+		-- Better Netrw
+		use {"tpope/vim-vinegar"}
+
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
       opt = true,
-			event = "BufReadPre",
       run = ":TSUpdate",
       config = function()
         require("config.treesitter").setup()

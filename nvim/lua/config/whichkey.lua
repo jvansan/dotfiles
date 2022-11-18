@@ -27,6 +27,8 @@ local function code_keymap()
         name = "Code",
         r = { "<cmd>update<CR><cmd>exec '!python3' shellescape(@%, 1)<cr>", "Run" },
         m = { "<cmd>TermExec cmd='nodemon -e py %'<cr>", "Monitor" },
+				f = { "<cmd>update<CR><cmd>exec 'silent !pipx run black' shellescape(@%, 1)<cr>", "Format" },
+				s = { "<cmd>update<CR><cmd>exec 'silent !pipx run isort' shellescape(@%, 1)<cr>", "Sort Imports" },
       }
     elseif ft == "lua" then
       keymap_c = {
@@ -46,18 +48,18 @@ local function code_keymap()
         name = "Code",
         r = { "<cmd>GoRun<cr>", "Run" },
       }
-    elseif ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "javascriptreact" then
-      keymap_c = {
-        name = "Code",
-        o = { "<cmd>TypescriptOrganizeImports<cr>", "Organize Imports" },
-        r = { "<cmd>TypescriptRenameFile<cr>", "Rename File" },
-        i = { "<cmd>TypescriptAddMissingImports<cr>", "Import Missing" },
-        F = { "<cmd>TypescriptFixAll<cr>", "Fix All" },
-        u = { "<cmd>TypescriptRemoveUnused<cr>", "Remove Unused" },
-        R = { "<cmd>lua require('config.test').javascript_runner()<cr>", "Choose Test Runner" },
-        s = { "<cmd>2TermExec cmd='yarn start'<cr>", "Yarn Start" },
-        t = { "<cmd>2TermExec cmd='yarn test'<cr>", "Yarn Test" },
-      }
+    -- elseif ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "javascriptreact" then
+    --   keymap_c = {
+    --     name = "Code",
+    --     o = { "<cmd>TypescriptOrganizeImports<cr>", "Organize Imports" },
+    --     r = { "<cmd>TypescriptRenameFile<cr>", "Rename File" },
+    --     i = { "<cmd>TypescriptAddMissingImports<cr>", "Import Missing" },
+    --     F = { "<cmd>TypescriptFixAll<cr>", "Fix All" },
+    --     u = { "<cmd>TypescriptRemoveUnused<cr>", "Remove Unused" },
+    --     R = { "<cmd>lua require('config.test').javascript_runner()<cr>", "Choose Test Runner" },
+    --     s = { "<cmd>2TermExec cmd='yarn start'<cr>", "Yarn Start" },
+    --     t = { "<cmd>2TermExec cmd='yarn test'<cr>", "Yarn Test" },
+    --   }
     end
 
     -- if fname == "Cargo.toml" then
@@ -123,10 +125,10 @@ function M.setup()
       p = { "<cmd>PackerProfile<cr>", "Profile" },
     },
 
-    g = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
-    },
+    -- g = {
+    --   name = "Git",
+    --   s = { "<cmd>Neogit<CR>", "Status" },
+    -- },
 
 		f = {
 			name = "Find",
@@ -147,20 +149,19 @@ function M.setup()
 			s = { "<cmd>Telescope repo list<cr>", "Search" },
 		},
 
-
-		n = {
-			name = "Neotest",
-			a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
-			f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
-			F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
-			l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
-			L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
-			n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
-			N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
-			o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
-			S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
-			s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
-		},
+		-- n = {
+		-- 	name = "Neotest",
+		-- 	a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
+		-- 	f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run File" },
+		-- 	F = { "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Debug File" },
+		-- 	l = { "<cmd>lua require('neotest').run.run_last()<cr>", "Run Last" },
+		-- 	L = { "<cmd>lua require('neotest').run.run_last({ strategy = 'dap' })<cr>", "Debug Last" },
+		-- 	n = { "<cmd>lua require('neotest').run.run()<cr>", "Run Nearest" },
+		-- 	N = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug Nearest" },
+		-- 	o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output" },
+		-- 	S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
+		-- 	s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
+		-- },
   }
 
   whichkey.setup(conf)
