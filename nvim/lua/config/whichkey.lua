@@ -103,6 +103,7 @@ function M.setup()
   local mappings = {
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
+		["/"] = { "<cmd>Vexplore<CR>", "netrw"},
 		r = {
 			r = { "<cmd>e<CR>", "Reload" },
 		},
@@ -112,6 +113,7 @@ function M.setup()
 			n = { "<Cmd>bn<Cr>", "Go to next buffer"},
 			p = { "<Cmd>bp<Cr>", "Go to previous buffer"},
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
+      l = { "<Cmd>bl<Cr>", "List all buffers" },
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
     },
 

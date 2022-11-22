@@ -41,11 +41,24 @@ function M.setup()
   local function plugins(use)
     use { "wbthomason/packer.nvim" }
 
+    -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+      config = function()
+        require("config.treesitter").setup()
+      end,
+      requires = {
+        { "nvim-treesitter/nvim-treesitter-textobjects" },
+        { "p00f/nvim-ts-rainbow" },
+      },
+    }
+
     -- Colorscheme
     use {
-      "sainnhe/everforest",
+      "EdenEast/nightfox.nvim",
       config = function()
-        vim.cmd "colorscheme everforest"
+        vim.cmd "colorscheme nightfox"
       end,
     }
 
@@ -54,20 +67,6 @@ function M.setup()
 
 		-- Better Netrw
 		use {"tpope/vim-vinegar"}
-
-    -- Treesitter
-    use {
-      "nvim-treesitter/nvim-treesitter",
-      -- opt = true,
-      run = ":TSUpdate",
-      config = function()
-        require("config.treesitter").setup()
-      end,
-      requires = {
-        { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
-        { "p00f/nvim-ts-rainbow", event = "BufReadPre"},
-      },
-    }
 
 		-- WhichKey
 		use {
@@ -169,7 +168,6 @@ function M.setup()
 				wants = "nvim-treesitter",
 				event = "InsertEnter",
 			}
-
 
 		--	LSP
 		use {
