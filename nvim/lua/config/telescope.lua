@@ -57,6 +57,7 @@ function M.setup()
 
 	telescope.setup {
 		defaults = {
+			file_ignore_patterns = { ".cache", ".local" },
 			buffer_previewer_maker = preview_maker,
 			mappings = {
 				i = {
@@ -91,6 +92,12 @@ function M.setup()
 				},
       },
 		},
+		extensions = {
+			project = {
+				base_dirs = {"~/git/"},
+				theme = "dropdown",
+			}
+		}
 	}
 
 	telescope.load_extension "fzf"
