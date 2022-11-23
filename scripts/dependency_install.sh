@@ -26,7 +26,7 @@ install_fedora() {
   sudo dnf install -y vim python3-neovim flameshot \
     make gcc zlib-devel bzip2 bzip2-devel readline-devel \
     sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel \
-    zip unzip graphviz graphviz-devel
+    zip unzip graphviz graphviz-devel fd-find bat ripgrep 
 }
 
 install_python() {
