@@ -4,8 +4,7 @@
 tags
 ncbi_api.key
 zshenv
-env/work.env
-env/_work.env
+env/00-work.env
 
 /* only keep plugin manager */
 tmux/plugins
