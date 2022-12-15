@@ -5,3 +5,7 @@ window:
     lines: 40
 bell:
   duration: 0
+font:
+  normal:
+    family: FiraCode Nerd Font Mono
+    style: Regular
