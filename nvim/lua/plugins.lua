@@ -62,6 +62,16 @@ function M.setup()
       end,
     }
 
+		-- Tabbar
+		use {
+			'akinsho/bufferline.nvim',
+			tag = "v3.*",
+			requires = 'nvim-tree/nvim-web-devicons',
+			config = function()
+				require("config.bufferline").setup()
+			end,
+		}
+
 		-- Load only when require
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
