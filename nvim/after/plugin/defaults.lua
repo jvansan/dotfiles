@@ -26,6 +26,10 @@ opt.wildignorecase = true
 opt.wildignore:append "**/node_modules/*"
 opt.wildignore:append "**/.git/*"
 opt.wildignore:append "**/build/*"
+-- Required by nvim-tree
+g.loaded_netrw = 1
+g.loaded_netrw_Plugin = 1
+
 -- Better Netrw
 g.netrw_banner = 0 -- Hide banner
 g.netrw_liststyle = 3 -- Tree-style view

@@ -76,7 +76,16 @@ function M.setup()
     use { "nvim-lua/plenary.nvim", module = "plenary" }
 
 		-- Better Netrw
-		use {"tpope/vim-vinegar"}
+		use { "tpope/vim-vinegar" }
+		use {
+			"nvim-tree/nvim-tree.lua",
+			requires = {
+				"nvim-tree/nvim-web-devicons",
+			},
+			config = function()
+				require("nvim-tree").setup()
+			end
+		}
 
 		-- WhichKey
 		use {

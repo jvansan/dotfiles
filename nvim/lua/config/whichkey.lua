@@ -103,7 +103,8 @@ function M.setup()
   local mappings = {
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
-		["/"] = { "<cmd>Vexplore<CR>", "netrw"},
+		["/"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+
 		r = {
 			r = { "<cmd>e<CR>", "Reload" },
 		},
