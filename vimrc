@@ -1,5 +1,12 @@
-" Load settings and plugins
-lua require('plugins')
+set nocompatible
 
-source ~/.vim/startup/settings.vim
-source ~/.vim/startup/mappings.vim
+syntax on
+set autoindent
+set cindent
+set backspace=indent,eol,start
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set number
+set listchars=tab:>-,trail:-
+set list!
