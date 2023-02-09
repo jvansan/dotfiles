@@ -107,8 +107,10 @@ export EDITOR="vi"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias docker-compose="docker compose"
 alias dps="docker ps"
+alias cdu="cd ~/projects/unp/"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+alias load_dotenv='export $(grep -v '^#' .env | xargs)'
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
