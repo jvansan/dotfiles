@@ -2,11 +2,6 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
--- Remap leader and local leader to <Space>
-api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
-g.mapleader = " "
-g.maplocalleader = " "
-
 opt.termguicolors = true -- Enable colors in terminal
 opt.hlsearch = true --Set highlight on search
 opt.number = true --Make line numbers default
@@ -26,9 +21,6 @@ opt.wildignorecase = true
 opt.wildignore:append "**/node_modules/*"
 opt.wildignore:append "**/.git/*"
 opt.wildignore:append "**/build/*"
--- Required by nvim-tree
-g.loaded_netrw = 1
-g.loaded_netrw_Plugin = 1
 
 -- Better Netrw
 g.netrw_banner = 0 -- Hide banner
